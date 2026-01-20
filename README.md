@@ -1,52 +1,84 @@
-# Cpp-mysql library
+# Library Management System using C++
 
-This is a console application built for a library management system. It was created to provide more experience in both C++ and MySQL.
+## Project Overview
+The **Library Management System using C++** is a console-based application developed to automate and manage essential library operations.  
+This project integrates **C++ programming** with a **MySQL database** to store and manage data related to books, members, and borrowing transactions.
 
-## Prerequisite
+---
 
+## Technologies Used
+- Programming Language: C++  
+- Database: MySQL  
+- Database Connector: MySQL Connector/C++  
+- Application Type: Console-Based Application  
 
-Before using this application, you must install the MySQL Connector and MySQL Server. The best way to do this is by downloading and installing from the following link:
+---
+
+## Prerequisites
+Before running this application, ensure that the following software is installed on your system:
+
+- MySQL Server  
+- MySQL Connector/C++  
+
+Both can be downloaded and installed from the official MySQL website:  
 https://dev.mysql.com/downloads/installer/
 
-I have used the following versions:
+---
 
-- MySQL Server 8.0.30
-- Connector/C++ 8.0.30
+## Software Versions Used
+- MySQL Server: 8.0.30  
+- MySQL Connector/C++: 8.0.30  
 
-Additionally, you will need to have the following credentials:
+---
+
+## Database Configuration
+Update the database connection credentials in the source code according to your local MySQL setup:
 
 ```cpp
-const char* HOST = "your host"; // for local database localhost
-const char* USER = "your mysql username";
-const char* PASSWD = "your myqsl password";
-const char* DB_NAME = "your mysql database name";
-const int PORT = 3306; //here port number standard is 3306
-```
+const char* HOST = "localhost";       // Database host
+const char* USER = "your_username";   // MySQL username
+const char* PASSWD = "your_password"; // MySQL password
+const char* DB_NAME = "your_db_name"; // Database name
+const int PORT = 3306;                // Default MySQL port
 
-## MYSQL schema
+---
 
-The project file, library.sql, contains the queries used to create the database. You can view a screenshot of the schema below:
+Database Schema
 
-![MySQL schema screenshot](librarySchema.png?raw=true "MySQL schema screenshot")
+The project includes a SQL file named library.sql, which contains all the queries required to create the database schema and tables used by the application.
 
-## Project features
+Steps to set up the database:
+1.Create a new database in MySQL
+2.Execute the library.sql script
+3.Verify that all required tables are created successfully
 
-The library management system has the following features:
+Features
+Book Management
+- Add new books to the library
+- Display all books with title, author, and genre
+- View the last 20 added or borrowed books
+- Identify the most frequently borrowed books
 
-* books
-  - creating books [*]
-  - showing all books by title with genre and author [*]
-  - showing last 20 added/borrowed books [*]
-  - showing most borrowed books [*]
-* members 
-  - creating members [*]
-  - showing most active members [*]
-  - showing all members by name and books they borrow []
-* borrowing books 
-  - borrowing book [*]
-  - returning book [*]
-  - member cannot borrow a book that has already been rented [*]
-  - member can borrow maximum of 5 books [*]
-## Additon info
+Member Management
+- Register new library members
+- Display the most active members
+- View all members along with the books they have borrowed (pending)
 
-This project was created to practice C++ and MySQL and is not meant to be used as a reference for best practices. However, if you still choose to use it, please let the author know if you encounter any mistakes by sending an email to kluzniakkuba@gmail.com.
+Borrowing and Returning System
+- Borrow books from the library
+- Return borrowed books
+- Prevent borrowing of books that are already issued
+- Restrict members to a maximum of five borrowed books
+
+Project Objectives
+- To design and implement a Library Management System using C++
+- To perform database-driven operations using MySQL
+- To apply real-world constraints and business logic in software development
+- To enhance understanding of C++ and Database Management Systems
+
+Future Enhancements
+- Completion of pending member-book mapping feature
+- Improved error handling and input validation
+- Role-based user authentication
+- Enhanced user interface
+- Conversion to a graphical user interface (GUI) application
