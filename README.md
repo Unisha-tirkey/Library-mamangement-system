@@ -41,7 +41,7 @@ const char* PASSWD = "your_password"; // MySQL password
 const char* DB_NAME = "your_db_name"; // Database name
 const int PORT = 3306;                // Default MySQL port
 
----
+```
 
 Database Schema
 
